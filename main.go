@@ -54,6 +54,8 @@ func downloadOnlySubapp(bucket, subapp, stage, platform string,
 	)
 
 	configPath = path.Join(currentDir, "tools", ".ossutilconfig")
+	// if used for google storage file info collection, change cmd to gsutil,
+	// and like: gsutil ls -L gs://[bucket]/[objectPath]
 	cmdPath = path.Join(currentDir, "tools", "ossutilmac64")
 	chMessage = make(chan map[string]string,
 		len(mainappSubappResourceType[bucket]))
